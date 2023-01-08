@@ -4,18 +4,18 @@ import Button from "react-bootstrap/Button";
 import Particle from "../Particle";
 import pdf from "../../Assets/Resume.pdf";
 import { AiOutlineDownload } from "react-icons/ai";
-import { Document, Page, pdfjs } from "react-pdf";
+import { pdfjs } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
-const resumeLink = "https://github.com/mrudulpatel/covi_alerts_pune_18/blob/main/Resume.pdf"
+// const resumeLink = "https://github.com/mrudulpatel/covi_alerts_pune_18/blob/main/Resume.pdf"
 
 function ResumeNew() {
-  const [width, setWidth] = useState(1200);
+  // const [width, setWidth] = useState(1200);
 
-  useEffect(() => {
-    setWidth(window.innerWidth);
-  }, []);
+  // useEffect(() => {
+  //   setWidth(window.innerWidth);
+  // }, []);
 
   return (
     <div>

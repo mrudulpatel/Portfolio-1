@@ -4,21 +4,17 @@ import { CgCPlusPlus } from "react-icons/cg";
 import {
   DiJavascript1,
   DiReact,
-  DiNodejs,
   DiMongodb,
   DiPython,
   DiGit,
   DiJava,
 } from "react-icons/di";
 import {
-  SiPytorch,
   SiFirebase,
-  SiNextdotjs,
   SiMysql,
   SiHtml5,
   SiBootstrap,
   SiCss3,
-  SiJavascript,
 } from "react-icons/si";
 
 function Techstack() {
