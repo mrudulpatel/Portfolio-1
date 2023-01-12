@@ -2,8 +2,26 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
+import { useState } from "react";
+import { useEffect } from "react";
+import db from "../../firebase/firebase";
+import { collection, onSnapshot, orderBy, query } from "firebase/firestore";
 
 function Projects() {
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    const q = query(collection(db, "projects"), orderBy("name", "asc"));
+    onSnapshot(q, (snap) => {
+      let arr = [];
+      snap.docs.forEach((project) => {
+        arr.push(project.data());
+      });
+      setProjects(arr);
+      console.log(arr);
+    });
+  }, []);
+
   return (
     <Container fluid className="project-section">
       <Particle />
@@ -15,7 +33,19 @@ function Projects() {
           Here are a few projects I've worked on.
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-          <Col md={4} className="project-card">
+          {projects?.map((project) => (
+            <Col md={4} className="project-card">
+              <ProjectCard
+                imgPath={project.image}
+                isBlog={false}
+                title={project.name}
+                description={project.desc}
+                ghLink={project.github_link}
+                demoLink={project.demo_link}
+              />
+            </Col>
+          ))}
+          {/* <Col md={4} className="project-card">
             <ProjectCard
               imgPath={"https://upmenu.netlify.app/favicon.ico"}
               isBlog={false}
@@ -88,7 +118,7 @@ function Projects() {
               ghLink="https://github.com/mrudulpatel/googlekeep-clone"
               // demoLink="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" <--------Please include a demo link here
             />
-          </Col>
+          </Col> */}
         </Row>
       </Container>
     </Container>
