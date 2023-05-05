@@ -10,6 +10,8 @@ import {
 } from "react-icons/ai";
 
 import { CgFileDocument } from "react-icons/cg";
+import Logo from "../Assets/logo.jpg";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
@@ -34,8 +36,21 @@ function NavBar() {
     >
       <Container>
         <Navbar.Brand href="/" className="d-flex">
-          {/* <img src={logo} className="img-fluid logo" alt="brand" /> */}
+          <img src={Logo} className="img-fluid logo" alt="brand" />
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              marginLeft: "1rem",
+              color: "black",
+            }}
+          >
+            Sundeep & Company
+          </div>
         </Navbar.Brand>
+      </Container>
+      <Container>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
           onClick={() => {
@@ -60,7 +75,7 @@ function NavBar() {
                 to="/about"
                 onClick={() => updateExpanded(false)}
               >
-                <AiOutlineUser style={{ marginBottom: "2px" }} /> About
+                Products
               </Nav.Link>
             </Nav.Item>
 
@@ -73,7 +88,7 @@ function NavBar() {
                 <AiOutlineFundProjectionScreen
                   style={{ marginBottom: "2px" }}
                 />{" "}
-                Projects
+                Order Now
               </Nav.Link>
             </Nav.Item>
 
@@ -83,7 +98,7 @@ function NavBar() {
                 to="/resume"
                 onClick={() => updateExpanded(false)}
               >
-                <CgFileDocument style={{ marginBottom: "2px" }} /> Resume
+                <AiOutlineUser style={{ marginBottom: "2px" }} /> About
               </Nav.Link>
             </Nav.Item>
           </Nav>

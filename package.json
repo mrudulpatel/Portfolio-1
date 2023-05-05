@@ -1,6 +1,6 @@
 {
-  "name": "portfolio",
-  "version": "0.1.0",
+  "name": "company",
+  "version": "0.0.1",
   "private": true,
   "dependencies": {
     "@popperjs/core": "^2.11.6",
@@ -21,6 +21,7 @@
     "react-pdf": "^5.7.1",
     "react-router-dom": "^6.2.2",
     "react-scripts": "5.0.0",
+    "react-simple-chatbot": "^0.6.1",
     "react-tsparticles": "^1.43.1",
     "typewriter-effect": "^2.18.2",
     "web-vitals": "^2.1.4"
